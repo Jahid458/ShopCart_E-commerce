@@ -47,23 +47,23 @@ const ProductDisplay = ({ item }) => {
 
     const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    const existingProductIndex = existingCart.findIndex((item) => item.id === id);
+    const existingProductIndex = existingCart.findIndex(
+      (item) => item.id === id
+    );
 
     if (existingProductIndex !== -1) {
       existingCart[existingProductIndex].quantity += prequantity;
-    }else{
+    } else {
       existingCart.push(product);
     }
-      //update Local Storage
-      localStorage.setItem("cart",JSON.stringify(existingCart));
+    //update Local Storage
+    localStorage.setItem("cart", JSON.stringify(existingCart));
 
-      //reset form fields
-      setQuantity(1);
-      setSize("Select Size");
-      setColor("Select Color");
-      setCoupon("");
-
-
+    //reset form fields
+    setQuantity(1);
+    setSize("Select Size");
+    setColor("Select Color");
+    setCoupon("");
   };
 
   return (
@@ -138,7 +138,7 @@ const ProductDisplay = ({ item }) => {
           <button type="submit" className="lab-btn">
             <span>Add to Cart</span>
           </button>
-          <Link to="./cart-page" className="lab-btn bg-primary">
+          <Link to="/cart-page" className="lab-btn bg-primary">
             <span>Check Out</span>
           </Link>
         </form>

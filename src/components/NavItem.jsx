@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/images/logo/logo.png";
 
@@ -6,7 +6,7 @@ function NavItem() {
   const [menuToggle, setMenuToggle] = useState(false);
   const [socialToggle, setSocialToggle] = useState(false);
   const [headerFixed, setHeaderFixed] = useState(false);
-
+  
   //add Event Listener
   window.addEventListener("scroll", () => {
     if (window.scrollY > 200) {
